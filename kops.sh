@@ -7,9 +7,9 @@
 aws configure
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 wget https://github.com/kubernetes/kops/releases/download/v1.25.0/kops-linux-amd64
-chmod +x kops-linux-amd64 kubectl
-mv kubectl /usr/local/bin/kubectl
-mv kops-linux-amd64 /usr/local/bin/kops
+sudo chmod +x kops-linux-amd64 kubectl
+sudo mv kubectl /usr/local/bin/kubectl
+sudo mv kops-linux-amd64 /usr/local/bin/kops
 
 aws s3api create-bucket --bucket katrojwar96.k8s.local --region us-east-1
 aws s3api put-bucket-versioning --bucket katrojwar96.k8s.local --region us-east-1 --versioning-configuration Status=Enabled
